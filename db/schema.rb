@@ -10,10 +10,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_01_163708) do
+ActiveRecord::Schema.define(version: 2019_12_01_164648) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.datetime "booking_date"
+    t.bigint "open_expert_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["open_expert_id"], name: "index_bookings_on_open_expert_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "feedbacks", force: :cascade do |t|
+    t.text "content"
+    t.bigint "open_expert_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["open_expert_id"], name: "index_feedbacks_on_open_expert_id"
+    t.index ["user_id"], name: "index_feedbacks_on_user_id"
+  end
+
+  create_table "open_experts", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.float "hours"
+    t.string "location"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_open_experts_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +54,17 @@ ActiveRecord::Schema.define(version: 2019_12_01_163708) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "department"
+    t.text "intro"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "open_experts"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "feedbacks", "open_experts"
+  add_foreign_key "feedbacks", "users"
+  add_foreign_key "open_experts", "users"
 end
