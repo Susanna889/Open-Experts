@@ -7,20 +7,20 @@ class SessionsController < ApplicationController
   end
 
   def create
-  	# @open_experts = Exchange.new
-  	# @open_experts.user = current_user
-  	# @open_experts.save
-  	# redirect_to @open_experts
+  	# @osessions = Session.new
+  	# @sessions.user = current_user
+  	# @sessions.save
+  	# redirect_to @sessions
   end
   
   def destroy
-  	# @open_experts.destroy
-  	# redirect_to open_experts_path
+  	# sessions.destroy
+  	# redirect_sessions_path
   end
 
   def edit
-  	# @open_experts.update
-  	# redirect_to @open_experts
+  	# @sessions.update
+  	# redirect_to @sessions
   end
 
   end
