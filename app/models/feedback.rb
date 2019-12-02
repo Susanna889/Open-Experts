@@ -1,4 +1,6 @@
 class Feedback < ApplicationRecord
-  belongs_to :open_expert
+  belongs_to :session
   belongs_to :user
+
+  validates :text, presence: true
 end

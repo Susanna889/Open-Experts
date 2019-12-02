@@ -1,4 +1,4 @@
 class Booking < ApplicationRecord
-  belongs_to :open_expert
+  belongs_to :session
   belongs_to :user
 end

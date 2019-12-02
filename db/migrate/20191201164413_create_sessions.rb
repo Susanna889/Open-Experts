@@ -1,6 +1,6 @@
-class CreateOpenExperts < ActiveRecord::Migration[5.2]
+class CreateSessions < ActiveRecord::Migration[5.2]
   def change
-    create_table :open_experts do |t|
+    create_table :sessions do |t|
       t.string :title
       t.text :description
       t.float :hours
