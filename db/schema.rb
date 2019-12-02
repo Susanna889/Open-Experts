@@ -17,25 +17,25 @@ ActiveRecord::Schema.define(version: 2019_12_01_164648) do
 
   create_table "bookings", force: :cascade do |t|
     t.datetime "booking_date"
-    t.bigint "open_expert_id"
+    t.bigint "session_id"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["open_expert_id"], name: "index_bookings_on_open_expert_id"
+    t.index ["session_id"], name: "index_bookings_on_session_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
   create_table "feedbacks", force: :cascade do |t|
     t.text "content"
-    t.bigint "open_expert_id"
+    t.bigint "session_id"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["open_expert_id"], name: "index_feedbacks_on_open_expert_id"
+    t.index ["session_id"], name: "index_feedbacks_on_session_id"
     t.index ["user_id"], name: "index_feedbacks_on_user_id"
   end
 
-  create_table "open_experts", force: :cascade do |t|
+  create_table "sessions", force: :cascade do |t|
     t.string "title"
     t.text "description"
     t.float "hours"
@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 2019_12_01_164648) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_open_experts_on_user_id"
+    t.index ["user_id"], name: "index_sessions_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -62,9 +62,9 @@ ActiveRecord::Schema.define(version: 2019_12_01_164648) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "bookings", "open_experts"
+  add_foreign_key "bookings", "sessions"
   add_foreign_key "bookings", "users"
-  add_foreign_key "feedbacks", "open_experts"
+  add_foreign_key "feedbacks", "sessions"
   add_foreign_key "feedbacks", "users"
-  add_foreign_key "open_experts", "users"
+  add_foreign_key "sessions", "users"
 end
