@@ -1,1 +1,38 @@
 // Specific CSS for your home-page
+.header-landingpage {
+  font-family: Quicksand;
+  font-style: normal;
+  font-size: 36px;
+  line-height: 45px;
+  color: #FFFFFF;
+  height: 100vh;
+  background-size: cover;
+  h1 {
+  	  font-weight: 500;
+  	  margin-left: 80px;
+  	  position: absolute;
+  	  margin-top: 50px;
+  }
+  p {
+  	  font-weight: 300;
+  	  margin-left: 80px;
+  	  position: absolute;
+  	  margin-top: 100px;
+  }
+}
+
+.button-details {
+  font-style: normal;
+  font-weight: bold;
+  position: absolute;
+  bottom: 30px; 
+  font-size: 24px;
+  width: 10px;
+  height: 58px;
+  padding: 10px;
+  text-color: #FFFFFF;
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+}

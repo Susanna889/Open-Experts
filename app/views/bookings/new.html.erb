@@ -1,0 +1,9 @@
+<div class="edit align-items-center">
+  <div class="form flex justify-content-center align-items-center">
+  <h1> Book your Session.</h1>
+    <%= render 'form', bookings: @bookings %>
+  </div>
+  <div class="image">
+        <%= cl_image_tag @session.photo %>
+  </div>
+</div>

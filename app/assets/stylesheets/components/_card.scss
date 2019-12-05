@@ -1,0 +1,64 @@
+
+.dashboard-banner {
+  background-size: cover;
+  background-position: center;
+  margin-left: 30px;
+}
+
+
+.h1, .p {
+  font-family: Quicksand;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 60px;
+}
+
+.container {
+	text-align: left;
+	width: 900px;
+	margin-left: 30px;
+	background: rgba(242, 244, 255, 0.5);
+}
+
+.card-session-photo {
+	display: flex;
+	justify-content: space-between;
+	height: 300px;
+	img {
+		width: 100%;
+	}
+}
+
+.card-container {
+	min-width: 350px;
+}
+
+.header {
+  font-family: Quicksand;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+
+}
+      
+
+.card-session-infos {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+
+}
+
+.button-details {
+ background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+ border-radius: 22px;
+ color: #FFFFFF;
+ align: center;
+ text-align: center;
+ }
+
+.row {
+	margin-left: 30px;
+}
+

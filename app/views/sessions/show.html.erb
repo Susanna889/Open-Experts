@@ -1,0 +1,23 @@
+<div class="container" id="show-cont">
+  <div class="row mh-100">
+    <div class="col-6 mh-100">
+      
+      <%= link_to 'BOOK SESSION', new_session_booking_path(@session), class: "btn-book", id: "bookbtn"%>
+    </div>
+    <div class="col-6">
+      <div class="session-info">
+        <h1 class="text-left" id="show-session-title"><%= @session.title %></h1>
+        <p class="text-left" id="show-user"> <b><%= @session.user_id %></b>
+        </div>
+        <div class="text-left">
+          <h3>Details</h3>
+          <p class="description" id="description"> <%= @session.description %> </p>
+        </div>
+        <% @session.feedbacks.each do |feedback| %>
+        <div class="feedback-card">
+          <p class="text-right"> <%= feedback.content %> </p>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
