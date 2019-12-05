@@ -1,0 +1,17 @@
+// import other page stylesheets
+
+
+
+.button-details {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  width: 100%;
+  height: 58px;
+  padding: 10px;
+  text-color: #FFFFFF;
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+}

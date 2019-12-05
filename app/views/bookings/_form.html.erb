@@ -1,0 +1,8 @@
+<div class="container justify-content-center">
+  <%= simple_form_for([@session, @booking]) do |f| %>
+	<%= f.input :booking_date %>
+	<%= f.button :submit, "BOOK SESSION", class: "BOOK SESSION" %>
+  <% end %>
+</div>
+
+

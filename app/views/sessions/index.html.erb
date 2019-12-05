@@ -1,0 +1,31 @@
+<div class="dashboard-banner">
+  <div class="dashboard-banner-text">
+    <h1 class="page-title-entry-title">Search for all you need to know!</h1>
+    <p class="page-sub-title">Your collegaues will be happy to share with you.</p>
+  </div>
+</div>
+<br>
+<br>
+
+<div>
+  <div class="row">
+    <% @sessions.each do |s| %>
+      <div class="card-container col-12 col-md-6 col-lg-4">
+        <div class="card-session-photo">
+          <%= cl_image_tag s.photo.url, crop: :left %>
+        </div>
+          <div class="card-header">
+            <h2 class="title"> <%= s.title %> </h2>
+            <p class="description"> <%= s.description %> </p>
+          </div>
+          <div class="row card-session-infos">
+            <p>hours</p> 
+            <p>Location</p>
+          </div>
+          <%= link_to "VIEW DETAILS", session_path(s), class: "button-details"%>
+      </div>
+    <% end %>
+  </div>      
+</div>
+
+

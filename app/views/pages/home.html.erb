@@ -1,2 +1,6 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+
+<div class="header-landingpage" style="background-image: url(<%= cl_image_path 'https://res.cloudinary.com/dawml1tk4/image/upload/v1575385879/home.jpg' %>);">
+  <h1>OPEN EXPERTS</h1>
+  <p>Share your Knowledge with your colleagues. Offer your Expert Knowledge to your collegues</p>
+  <%= button_to "FIND OUT MORE", sessions_path, method: :get, class: "button-details"%>
+</div>
