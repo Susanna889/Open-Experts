@@ -13,9 +13,12 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new
     @booking.user = current_user
-    @booking.session = Session.find(params[:session.id])
-    @booking.save
-    redirect_to dashboards_path
+    @booking.session = Session.find(params[:session_id])
+    if @booking.save
+      redirect_to dashboard_path
+    else
+      render :new
+    end
   end
 
   def destroy

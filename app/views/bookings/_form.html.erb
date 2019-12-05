@@ -1,20 +1,8 @@
 <div class="container justify-content-center">
-  <%= simple_form_for([@session, @booking]) do |s| %>
-  <div class="form-inputs">
-    <label for="Title">-What Session?</label>
-    <br>
-  <div class="form-inputs">
-    <label for="Date Needed">What Date?</label>
-  </div>
-    <br>
-  <div class="form-inputs">
-    <label for="Hours Needed">How many hours?</label>
-    <br>
-    <input type="integer" name="Hours Needed" id="Hour">
-  </div>
-  <div class="form-actions">
-      <%= f.button :submit, class: "BOOK SESSION" %>
-  </div>
+  <%= simple_form_for([@session, @booking]) do |f| %>
+	<%= f.input :booking_date %>
+	<%= f.button :submit, "BOOK SESSION", class: "BOOK SESSION" %>
+  <% end %>
 </div>
-  
+
 

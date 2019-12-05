@@ -5,6 +5,9 @@ Rails.application.routes.draw do
     resources :bookings
     resources :feedbacks, only: [:new, :create, :update, :edit]
   end
+
+  get 'dashboard', to: 'pages#dashboard'
+
   # resources :bookings, only: [:destroy]
   # resources :dashboards, only: [:index] do
   # 	collection do
